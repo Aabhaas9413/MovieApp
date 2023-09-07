@@ -1,0 +1,63 @@
+<div *ngIf="movieInfo" class="container mt-5 mb-5">
+    <div class="row no-gutters">
+        <div class="col-md-4 col-lg-4"><img [src]="movieInfo?.poster"></div>
+        <div class="col-md-8 col-lg-8">
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-row justify-content-between align-items-center p-5 bg-dark text-white">
+                    <h3 class="display-5">{{movieInfo?.title}}</h3><i class="fa fa-facebook"></i><i class="fa fa-google"></i><i class="fa fa-youtube-play"></i><i class="fa fa-dribbble"></i><i class="fa fa-linkedin"></i></div>
+                <div class="p-3 bg-black text-white ">
+                    <div class="row">
+                    <div class="col-md-8 ">
+                    <h6>Genre : {{movieInfo?.genre}}</h6>                    
+                    <h6>Release Date : {{movieInfo?.released}}</h6>
+                     </div>
+                     <div class="col-md-4">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        All Info
+                      </button>
+                    </div>
+                </div>
+                </div>
+                
+               
+                <div class="d-flex flex-row text-white">
+                    <div class="p-4 bg-primary text-center skill-block" style="width: 40%;">
+                        <h4>{{movieInfo?.ratings?.[0].value}}</h4>
+                        <h6>{{movieInfo?.ratings?.[0].source}}</h6>
+                    </div>
+                    <div class="p-3 bg-success text-center skill-block">
+                        <h4>{{movieInfo?.ratings?.[1].value}}</h4>
+                        <h6>{{movieInfo?.ratings?.[1].source}}</h6>
+                    </div>
+                    <div class="p-3 bg-warning text-center skill-block">
+                        <h4>{{movieInfo?.ratings?.[2].value}}</h4>
+                        <h6>{{movieInfo?.ratings?.[2].source}}</h6>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                      <!-- Scrollable modal -->
+                      <div class="modal fade"   id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                         <h6>Genre : {{movieInfo?.genre}}</h6> 
+                                        <h6>Director : {{movieInfo?.director}}</h6>                    
+                                        <h6>Actors : {{movieInfo?.actors}}</h6>
+                                        <h6>Country : {{movieInfo?.country}}</h6>
+                                        <h6>Language : {{movieInfo?.language}}</h6>
+                                        <h6>Release Date : {{movieInfo?.released}}</h6>
+                                        <h6>Runtime : {{movieInfo?.runtime}}</h6>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                                
+                              </div>
+                            </div>
+                          </div>
+                      </div>

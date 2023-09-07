@@ -5,7 +5,7 @@ namespace MovieDataAccess.MovieData
 {
     public class MovieData : IMovieData
     {
-        public async Task<List<MovieSearch>?> GetMovieListByTitle(string title, int page)
+        public async Task<List<MovieSearch>> GetMovieListByTitle(string title, int page)
         {
             var moviePath = $"http://www.omdbapi.com/?s={title}&apikey=10e7775&page={page}";
             MovieSearchResponse res = await MovieDataAccess.getDataFromResponseObj<MovieSearchResponse>(moviePath);

@@ -1,0 +1,9 @@
+
+<form>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Search for the movie with it's title</label>
+    <input type="text" class="form-control" id="movietitle" #movietitle  placeholder="Enter title">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your search with anyone else.</small>
+   </div>
+   <button type="submit" (click)="getMovie(movietitle.value)" class="btn btn-primary">Srarch</button>
+</form>

@@ -1,0 +1,9 @@
+
+<form>
+    <div class="form-group">
+     <label for="exampleInputEmail1">Search for the movie with it's IMDb ID</label>
+     <input type="text" class="form-control" #IMDbID placeholder="Enter IMDb Id">
+     <small id="emailHelp" class="form-text text-muted">We'll never share your search with anyone else.</small>
+    </div>
+    <button type="submit" (click)="getMovie(IMDbID.value)" class="btn btn-primary">Submit</button>
+ </form>

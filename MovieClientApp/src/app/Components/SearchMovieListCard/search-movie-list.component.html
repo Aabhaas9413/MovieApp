@@ -1,0 +1,17 @@
+<hr>
+<h1>You have searched for : {{text}}</h1>
+<hr>
+<div class="row" infiniteScroll
+[infiniteScrollDistance]="5"
+[infiniteScrollThrottle]="50"
+(scrolled)="onScroll()">
+<div *ngFor="let movie of movieList" class="card col-md-5 col-sm-5 col-lg-5" style="width: 20rem;padding: 2px;margin: 0px 1% 2% 5%;">
+    <img [src]="movie.poster" class="card-img-top img-fluid" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{movie.title}}</h5>
+      <p class="card-text">{{movie.type}}</p>
+      <a class="btn btn-primary" (click)="displayMovieInfo(movie?.title)">View Details</a>
+    </div>
+  </div>
+
+</div>
