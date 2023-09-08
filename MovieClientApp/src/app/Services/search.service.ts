@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from  '@angular/common/http';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
 
-  path: string = "https://localhost:7119/"
+  path: string = environment.baseUrl;
   constructor(private http: HttpClient) { }
 
   getMovieList(text: string, page: string):Observable<any>{

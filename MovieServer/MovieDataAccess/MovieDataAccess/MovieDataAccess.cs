@@ -2,11 +2,11 @@
 
 namespace MovieDataAccess.MovieData;
 
-public static class MovieDataAccess
+public class MovieDataAccess : IMovieDataAccess
 {
     private static HttpClient client = new HttpClient();
 
-    public static async Task<T> getDataFromResponseObj<T>(string path)
+    public async Task<T> getDataFromResponseObj<T>(string path)
     {
         var response = await client.GetAsync(path);
         var a = response.Content.ReadAsStringAsync();
