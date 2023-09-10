@@ -6,6 +6,6 @@ namespace MovieDataAccess.MovieData
     {
         Task<Movie> GetMovieByIMDbId(string id);
         Task<Movie> GetMovieByTitle(string title);
-        Task<List<MovieSearch>?> GetMovieListByTitle(string title, int page);
+        Task<MovieSearchResponse> GetMovieListByTitle(string title, int page);
     }
 }

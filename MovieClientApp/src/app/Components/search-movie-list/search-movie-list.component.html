@@ -1,10 +1,12 @@
-<hr>
-<h1>You have searched for : {{text}}</h1>
-<hr>
-<div class="row" infiniteScroll
+<div *ngIf="!noResults" infiniteScroll
 [infiniteScrollDistance]="5"
 [infiniteScrollThrottle]="50"
 (scrolled)="onScroll()">
+  <hr>
+<h2>You have searched for : {{text}}</h2>
+<h3>Total count of records for this search is : {{totalCount}}</h3>
+<hr>
+<div class="row" >
 <div *ngFor="let movie of movieList" class="card col-md-5 col-sm-5 col-lg-5" style="width: 20rem;padding: 2px;margin: 0px 1% 2% 5%;">
     <img [src]="movie.poster" class="card-img-top img-fluid" alt="...">
     <div class="card-body">
@@ -14,4 +16,10 @@
     </div>
   </div>
 
+</div>
+</div>
+<div *ngIf="noResults">
+  <hr>
+  <h1>No results have been found for : {{text}}</h1>
+  <hr>
 </div>

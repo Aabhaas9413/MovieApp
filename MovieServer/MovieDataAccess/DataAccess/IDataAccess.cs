@@ -1,6 +1,6 @@
 ﻿namespace MovieDataAccess.MovieData
 {
-    public interface IMovieDataAccess
+    public interface IDataAccess
     {
         Task<T> getDataFromResponseObj<T>(string path);
     }

@@ -2,7 +2,7 @@
 
 namespace MovieDataAccess.MovieData;
 
-public class MovieDataAccess : IMovieDataAccess
+public class DataAccess : IDataAccess
 {
     private static HttpClient client = new HttpClient();
 

@@ -12,6 +12,8 @@ export class SearchMovieListComponent implements OnInit {
   currentPage : number = 1
   movieList : any = []
   movieInfo : any = {}
+  totalCount : number = 0
+  noResults : boolean = false
   constructor(private route: ActivatedRoute, 
               private searchService: SearchService, 
               private router: Router) { }
@@ -22,7 +24,14 @@ export class SearchMovieListComponent implements OnInit {
       (params: any) => {
         this.text = params.get('text');
         this.searchService.getMovieList(this.text, this.currentPage.toString()).subscribe( res => {
-          this.movieList = res;
+          if(res.response == "True"){
+            this.noResults = false
+            this.movieList = res?.search;
+            this.totalCount = parseInt(res?.totalResults)            
+          }else{
+            this.noResults = true
+          }
+          
         })
     })
   }
@@ -37,7 +46,7 @@ export class SearchMovieListComponent implements OnInit {
   onScroll(){
     this.currentPage+=1;
     this.searchService.getMovieList(this.text, this.currentPage.toString()).subscribe( res => {
-      this.movieList.push(...res);
+      this.movieList.push(...res?.search);
     })
   }
 }

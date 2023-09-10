@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from  '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { SearchMovieListComponent } from './Components/SearchMovieListCard/search-movie-list.component';
-import { SearchMovieComponent } from './Components/search-movie/search-movie.component';
+import { SearchMovieListComponent } from './Components/search-movie-list/search-movie-list.component';
+import { SearchMovieComponent } from './Components/search-movie-title/search-movie.component';
 import { HomeComponent } from './Components/home/home.component';
 import { SearchMovieImdbIdComponent } from './Components/search-movie-imdb-id/search-movie-imdb-id.component';
 import { FormsModule } from '@angular/forms';
